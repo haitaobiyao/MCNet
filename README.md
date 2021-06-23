@@ -96,18 +96,18 @@ by Haitao Xiong, Wenjie Cai, Qiong Liu from South China University of Technology
 
 The following results are referred from our paper. Recently, we found that training with [mmsegmentation](https://github.com/open-mmlab/mmsegmentation) can achieve higher performance on the SCUT-Seg dataset. Therefore, we recommend researchers  to train the SCUT-Seg dataset with [mmsegmentation](https://github.com/open-mmlab/mmsegmentation).
 
-| Method     | Backbone   | mIoU(%) |
-| ---------- | ---------- | ------- |
-| U-Net      | ----       | 41.53   |
-| FCN-32s    | ResNet-101 | 48.43   |
-| FCN-16s    | ResNet-101 | 59.65   |
-| DFN        | ResNet-101 | 64.55   |
-| BiseNet    | ResNet-101 | 63.03   |
-| PSPNet     | ResNet-101 | 67.04   |
-| PSANet     | ResNet-101 | 67.32   |
-| DeepLabV3  | ResNet-101 | 64.64   |
-| DeepLabV3+ | ResNet-101 | 68.00   |
-| **MCNet**  | ResNet-101 | 69.79   |
+| Method     | Backbone   | mIoU(%)   |
+| ---------- | ---------- | --------- |
+| U-Net      | ----       | 41.53     |
+| FCN-32s    | ResNet-101 | 48.43     |
+| FCN-16s    | ResNet-101 | 59.65     |
+| DFN        | ResNet-101 | 64.55     |
+| BiseNet    | ResNet-101 | 63.03     |
+| PSPNet     | ResNet-101 | 67.04     |
+| PSANet     | ResNet-101 | 67.32     |
+| DeepLabV3  | ResNet-101 | 64.64     |
+| DeepLabV3+ | ResNet-101 | 68.00     |
+| **MCNet**  | ResNet-101 | **69.79** |
 
 ### Code Borrowed From
 
