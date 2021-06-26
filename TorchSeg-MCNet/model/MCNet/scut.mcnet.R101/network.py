@@ -41,21 +41,19 @@ class MCNet(nn.Module):
         x = self.decoder_level1(low_level_feat, edge_feature, road_attention)
 
         level1_seg_result = F.interpolate(x, size=data.size()[2:], mode='bilinear', align_corners=True)
-        level1_seg_result = F.log_softmax(level1_seg_result, dim=1)
         '''
         Level 2 model
         '''
         refine_energy, refine_attention_map = self.cmcm(level1_seg_result, energy)
         x_second = self.decoder_layer_level2(low_level_feat, edge_feature, blocks[-1], proj_query, proj_key, proj_value, road_reduce, refine_attention_map)
         level2_seg_result = F.interpolate(x_second, size=data.size()[2:], mode='bilinear', align_corners=True)
-        level2_seg_result = F.log_softmax(level2_seg_result, dim=1)
         edge_score = F.interpolate(edge_score, size=data.size()[2:], mode='bilinear', align_corners=True)
         if label is not None and aux_label is not None:
             level1_seg_loss = self.criterion(level1_seg_result, label)
             level2__seg_loss = self.criterion(level2_seg_result, label)
             edge_loss = self.edge_criterion(edge_score, aux_label)
             return level1_seg_loss + edge_loss*5 + level2__seg_loss, edge_loss*5, level1_seg_loss, level2__seg_loss
-        return level2_seg_result
+        return F.log_softmax(level2_seg_result, dim=1)
 
     def _nostride_dilate(self, m, dilate):
         if isinstance(m, nn.Conv2d):
@@ -160,6 +158,7 @@ class CMCM(nn.Module):
         super(CMCM, self).__init__()
 
     def forward(self, label, energy):
+        label = F.log_softmax(label, dim=1)
         b, c, h, w = label.size()
         attention_b, attention_pixel, attention_map = energy.size()
         downsample = nn.AdaptiveAvgPool2d((int(h/16), int(w/16)))
