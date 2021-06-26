@@ -109,6 +109,10 @@ The following results are referred from our paper. Recently, we found that train
 | DeepLabV3+ | ResNet-101 | 68.00     |
 | **MCNet**  | ResNet-101 | **69.79** |
 
+### Download Model
+
+[MCNet-ResNet101](https://pan.baidu.com/s/1wPrpyJrj-0y576bGsCe0Ag) code:1234
+
 ### Code Borrowed From
 
 Our code mainly refers from [torchseg](https://github.com/ycszen/TorchSeg).
