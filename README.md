@@ -14,7 +14,7 @@ Image sequences and annotations
 
 - [BaiduYun](https://pan.baidu.com/s/1QvHukmTTm0kNiroKK-72uQ)  code: 1234
 
-- GoogleDrive (Coming soon)
+- [GoogleDrive](https://drive.google.com/drive/folders/1soPrrx2_AXNzbrlOE89i5aYb3TxbmcB5?usp=sharing)
 
 ### Annotations
 
@@ -119,4 +119,4 @@ Our code mainly refers from [torchseg](https://github.com/ycszen/TorchSeg).
 
 ### Contact
 
-Please contact me if you get stuck anywhere.
+Please contact me xhtroman@gmail.com if you get stuck anywhere.
